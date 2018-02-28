@@ -1,10 +1,15 @@
 package com.example.cars;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
 public class Cars {
 
+    @Id
+    @GeneratedValue
+    private Long id;
     private String type;
     private String name;
 

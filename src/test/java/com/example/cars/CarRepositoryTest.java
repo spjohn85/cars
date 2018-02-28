@@ -23,9 +23,9 @@ public class CarRepositoryTest {
 
     @Test
     public void getCarDetails() {
-        //Cars savedCar = testEntityManager.persistAndFlush(new Cars("prius", "hybrid"));
+        Cars savedCar = testEntityManager.persistAndFlush(new Cars("prius", "hybrid"));
         Cars c=repository.findByName("prius");
-        assertThat(c.getName()).isEqualTo("prius");
-        //assertThat(c.getType()).isEqualTo(savedCar.getType());
+        assertThat(c.getName()).isEqualTo(savedCar.getName());
+        assertThat(c.getType()).isEqualTo(savedCar.getType());
     }
 }
